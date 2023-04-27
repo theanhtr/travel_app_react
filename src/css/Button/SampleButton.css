@@ -1,0 +1,17 @@
+.nav_bar_top-button {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    margin: 0px 5px;
+    padding: 5px;
+    border-radius: 10%;
+}
+
+.nav_bar_top-button:hover {
+    cursor: pointer;
+    background-color: #F2F3F3;
+}
+
+.nav_bar_top-button--text {
+    font-size: 13px;
+}
