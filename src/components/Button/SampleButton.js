@@ -1,14 +1,25 @@
 import React from "react";
-import "../../css/Header_css/NavBarTopButton.css"
-import {FaAngleDown} from 'react-icons/fa';
+import "../../css/Button/SampleButton.css"
 
-export default function NavBarTopButton(props) {
+export default function SampleButton(props) {
+    const [hover, setHover] = React.useState(false);
+
+    const buttonStyle = {
+        backgroundColor: hover ? props.backgroundColorHover : props.backgroundColor,
+        height: props.height
+    };
+    
+    const handleMouseOver = () => {
+        setHover(true);
+      };
+    
+      const handleMouseOut = () => {
+        setHover(false);
+      };
 
     return (
-        <div className="sample_button" onClick={props.onClick} style={{backgroundColor: props.backgroundColor}}>
-            <img src={props.src} alt="error" className="sample_button--image"/>
-            <p className="sample_button--text" color={props.textColor}> {props.text} </p>
-            {props.haveArrow && <FaAngleDown size={16}/>}
+        <div className="sample_button" onMouseOver={handleMouseOver} onMouseOut={handleMouseOut} onClick={props.onClick} style={buttonStyle}>
+            <p className="sample_button--text" style={{color: props.textColor}}> {props.text} </p>
         </div>
     );  
 }

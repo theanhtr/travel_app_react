@@ -1,0 +1,33 @@
+.booking--container {
+    height: 300px;
+    display: flex;
+    border-radius: 1%;
+    overflow: hidden;
+}
+
+.booking--container > .booking--nav {
+    width: 30%;
+    height: 100%;
+    background-color: #F2F3F3;
+    overflow: hidden;
+}
+
+.booking--container > .booking--main {
+    width: 70%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(238, 216, 216);
+    overflow: hidden;
+    
+}
+
+.booking--nav > .booking_nav-button {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+.booking--nav > .booking_nav-button:hover {
+    cursor: pointer;
+}

@@ -1,17 +1,16 @@
-.nav_bar_top-button {
-    height: 100%;
+.sample_button {
     display: flex;
     align-items: center;
-    margin: 0px 5px;
-    padding: 5px;
+    margin: 0px 10px;
+    padding: 10px 10px;
     border-radius: 10%;
 }
 
-.nav_bar_top-button:hover {
+.sample_button:hover {
     cursor: pointer;
-    background-color: #F2F3F3;
 }
 
-.nav_bar_top-button--text {
+.sample_button--text {
     font-size: 13px;
+    font-weight: 700;
 }

@@ -9,6 +9,7 @@ import download from "../../images/header/nav_bar_top/download.png"
 import order from "../../images/header/nav_bar_top/order.png"
 import vn from "../../images/header/nav_bar_top/vn.png"
 import NavBarTopButton from "./NavBarTopButton"
+import SampleButton from "../Button/SampleButton";
 
 export default function NavBarTop() {
     function clickBarIcon() {
@@ -23,6 +24,10 @@ export default function NavBarTop() {
         console.log("show");
     }
 
+    function sampleButtonClick() {
+        console.log("sample button");
+    }
+
     return (
         <div className="nav_bar_top">
             <div className="nav_bar_top--left">
@@ -31,13 +36,13 @@ export default function NavBarTop() {
             </div>
         
             <div className="nav_bar_top--right">
-                <NavBarTopButton src={download} text="Tải ứng dụng" onClick={buttonHaveArrowClick} haveArrow={true}/>
-                <NavBarTopButton src={shake_hand} text="Hợp tác với chúng tôi" onClick={buttonNoArrowClick} haveArrow={false}/>
-                <NavBarTopButton src={book_mark} text="Đã lưu" onClick={buttonNoArrowClick} haveArrow={false}/>
-                <NavBarTopButton src={order} text="Đặt chỗ của tôi" onClick={buttonNoArrowClick} haveArrow={false}/>
-                <NavBarTopButton src={vn} text="VND" onClick={buttonHaveArrowClick} haveArrow={true}/>
-                <NavBarTopButton src={book_mark} text="Đăng nhập" onClick={buttonHaveArrowClick} haveArrow={true}/>
-                
+                <NavBarTopButton imageSrc={download} text="Tải ứng dụng" onClick={buttonHaveArrowClick} haveArrow={true}/>
+                <NavBarTopButton imageSrc={shake_hand} text="Hợp tác với chúng tôi" onClick={buttonNoArrowClick} haveArrow={false}/>
+                <NavBarTopButton imageSrc={book_mark} text="Đã lưu" onClick={buttonNoArrowClick} haveArrow={false}/>
+                <NavBarTopButton imageSrc={order} text="Đặt chỗ của tôi" onClick={buttonNoArrowClick} haveArrow={false}/>
+                <NavBarTopButton imageSrc={vn} text="VND" onClick={buttonHaveArrowClick} haveArrow={true}/>
+                <NavBarTopButton imageSrc={book_mark} text="Đăng nhập" onClick={buttonHaveArrowClick} haveArrow={true}/>
+                <SampleButton onClick={sampleButtonClick} backgroundColor="#0194F3" backgroundColorHover="#007CE8" height="20px" textColor="white" text="Đăng ký"/>
             </div>
         </div>
     );

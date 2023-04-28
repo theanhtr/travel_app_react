@@ -1,9 +1,10 @@
 .nav_bar_top {
+    height: 60%;
     display: flex;
     width: 80%;
     margin: 10px auto;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 .nav_bar_top--left {
@@ -18,4 +19,5 @@
 
 .nav_bar_top--right {
     display: flex;
+    align-items: center;
 }
