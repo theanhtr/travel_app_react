@@ -1,0 +1,30 @@
+.carousel-container {
+    margin-top: 10px;
+    position: relative;
+}
+
+.carousel-item {
+    margin: 5px 10px;
+}
+
+.width-472px {
+    width: 472px !important; 
+}
+
+.carousel-item > img {
+    border-radius: 2%;
+}
+
+.react-multiple-carousel__arrow {
+    position: absolute;
+    top: 50%;
+    border-radius: 50%;
+}
+
+.react-multiple-carousel__arrow--left {
+    left: 5px;
+}
+
+.react-multiple-carousel__arrow--left {
+    right: -15px;
+}

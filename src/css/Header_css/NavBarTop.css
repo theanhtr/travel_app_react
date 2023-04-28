@@ -1,0 +1,23 @@
+.nav_bar_top {
+    height: 60%;
+    display: flex;
+    width: 80%;
+    margin: 10px auto;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav_bar_top--left {
+    display: flex;
+    align-items: center;
+}
+
+.nav_bar_top--left > .bar_icon {
+    cursor: pointer;
+     
+}
+
+.nav_bar_top--right {
+    display: flex;
+    align-items: center;
+}

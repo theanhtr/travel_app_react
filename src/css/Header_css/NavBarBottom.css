@@ -1,0 +1,16 @@
+.nav_bar_bottom {
+    background-color: #F2F3F3;
+    width: 100%;
+    height: 40%;
+    display: flex;
+    align-items: center;
+}
+
+.nav_bar_bottom--content {
+    
+    display: flex;
+    height: 100%;
+    width: 80%;
+    margin: 10px auto;
+    align-items: center;
+}

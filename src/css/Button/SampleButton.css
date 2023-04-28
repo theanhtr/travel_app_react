@@ -1,0 +1,16 @@
+.sample_button {
+    display: flex;
+    align-items: center;
+    margin: 0px 10px;
+    padding: 10px 10px;
+    border-radius: 10%;
+}
+
+.sample_button:hover {
+    cursor: pointer;
+}
+
+.sample_button--text {
+    font-size: 13px;
+    font-weight: 700;
+}

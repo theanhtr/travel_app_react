@@ -1,0 +1,16 @@
+.nav_bar_bottom-button {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    margin-right: 5%;
+    border-radius: 10%;
+}
+
+.nav_bar_bottom-button:hover {
+    cursor: pointer;
+}
+
+.nav_bar_bottom-button--text {
+    font-size: 15px;
+    padding-right: 5px;
+}
