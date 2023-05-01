@@ -5,6 +5,7 @@
     margin: 0px 5px;
     padding: 5px;
     border-radius: 10%;
+    position: relative;
 }
 
 .nav_bar_top-button:hover {
@@ -15,3 +16,41 @@
 .nav_bar_top-button--text {
     font-size: 13px;
 }
+
+.nav_bar_top-button--childComponent {
+    position: absolute;
+    top: 105%;
+    left: -10px;
+}
+
+/* -enter: Component bắt đầu xuất hiện */
+.nav_bar_top-button--childComponent--transition-enter {
+    transform: translateY(-100%);
+  }
+  
+  /* -enter-active: Component đang xuất hiện */
+  .nav_bar_top-button--childComponent--transition-enter-active {
+    transform: translateY(0);
+    transition: transform 0.9s;
+  }
+  
+  /* -enter-done: Component kết thúc hiệu ứng xuất hiện */
+  .nav_bar_top-button--childComponent--transition-enter-done {
+    transform: translateY(0);
+  }
+  
+  /* -exit: Component bắt đầu biến mất */
+  .nav_bar_top-button--childComponent--transition-exit {
+    transform: translateY(0);
+  }
+  
+  /* -exit-active: Component đang biến mất */
+  .nav_bar_top-button--childComponent--transition-exit-active {
+    transform: translateY(-100%);
+    transition: transform 0.9s;
+  }
+  
+  /* -exit-done: Component kết thúc hiệu ứng biến mất */
+  .nav_bar_top-button--childComponent--transition-exit-done {
+    transform: translateY(-100%);
+  }
