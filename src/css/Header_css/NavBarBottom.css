@@ -7,10 +7,19 @@
 }
 
 .nav_bar_bottom--content {
-    
     display: flex;
     height: 100%;
     width: 80%;
     margin: 10px auto;
     align-items: center;
+}
+
+.nav_bar_bottom--content > .nav_bar_top-button {
+    margin: 0 20px;
+}
+
+.nav_bar_bottom--content > .nav_bar_top-button > .nav_bar_top-button--container {
+    padding: 0;
+    margin: 0 !important;
+    border-radius: 3%;
 }

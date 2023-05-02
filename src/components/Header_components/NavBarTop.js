@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {FaBars} from "react-icons/fa";
 import logo_travel from "../../images/logo_travel.png"
 import '../../css/Header_css/NavBarTop.css'
@@ -8,20 +8,28 @@ import human_no_image from "../../images/header/nav_bar_top/human_no_image.png"
 import download from "../../images/header/nav_bar_top/download.png"
 import order from "../../images/header/nav_bar_top/order.png"
 import vn from "../../images/header/nav_bar_top/vn.png"
-import NavBarTopButton from "./NavBarTopButton"
+import NavBarButton from "./NavBarButton"
 import SampleButton from "../Button/SampleButton";
+import { AiOutlineClose } from "react-icons/ai";
+import { CSSTransition, Transition } from "react-transition-group";
+import NavBarTopDownload from './NavBarTopDownload';
+import NavBarTopChangeLanguage from "./NavBarTopChangeLanguage";
+import NavBarTopLogin from "./NavBarTopLogin";
+
 
 export default function NavBarTop() {
+    const [barMenuShow, setBarMenuShow] = useState(false);
+    
+    const navBarTopDownload = <NavBarTopDownload />
+    const navBarTopChangeLanguage = <NavBarTopChangeLanguage />
+    const navBarTopLogin = <NavBarTopLogin />
+    
     function clickBarIcon() {
-        console.log("ok");
+        setBarMenuShow(true);
     }
 
-    function buttonNoArrowClick() {
-        console.log("redirect");
-    }
-
-    function buttonHaveArrowClick() {
-        console.log("show");
+    function closeBarMenu() {
+        setBarMenuShow(false);
     }
 
     function sampleButtonClick() {
@@ -32,16 +40,45 @@ export default function NavBarTop() {
         <div className="nav_bar_top">
             <div className="nav_bar_top--left">
                 <FaBars color="#1BA0E2" size={24} className="bar_icon" onClick={clickBarIcon}/>
+                <CSSTransition
+                    in={barMenuShow}
+                    timeout={300}
+                    classNames="element--opacity-0-8--transition"
+                    unmountOnExit
+                >
+                    <div className="bar_icon--menu-overlay" onClick={closeBarMenu}></div>
+                </CSSTransition>
+
+                <CSSTransition
+                    in={barMenuShow}
+                    timeout={300}
+                    classNames="element--tran-X-minus-100-left--transition"
+                    unmountOnExit
+                >
+                    <div className="bar_icon--menu-main">
+                        <div className="bar_icon--menu-close" onClick={closeBarMenu} style={{cursor: "pointer"}}>
+                            <AiOutlineClose size={40} style={{position: "absolute", left: "22vw"}}/>
+                        </div>
+
+                        <NavBarButton imageSrc={order} text="Đặt chỗ của tôi" haveArrow={false} linkRedirect="#"/>
+                        <NavBarButton imageSrc={order} text="Đặt chỗ của tôi" haveArrow={false} linkRedirect="#"/>
+                        <NavBarButton imageSrc={order} text="Đặt chỗ của tôi" haveArrow={false} linkRedirect="#"/>
+                        <NavBarButton imageSrc={order} text="Đặt chỗ của tôi" haveArrow={false} linkRedirect="#"/>
+                        
+                    </div>
+                    
+                </CSSTransition>
+                    
                 <img src={logo_travel} alt="not found" width={135}/>
             </div>
         
             <div className="nav_bar_top--right">
-                <NavBarTopButton imageSrc={download} text="Tải ứng dụng" onClick={buttonHaveArrowClick} haveArrow={true}/>
-                <NavBarTopButton imageSrc={shake_hand} text="Hợp tác với chúng tôi" onClick={buttonNoArrowClick} haveArrow={false}/>
-                <NavBarTopButton imageSrc={book_mark} text="Đã lưu" onClick={buttonNoArrowClick} haveArrow={false}/>
-                <NavBarTopButton imageSrc={order} text="Đặt chỗ của tôi" onClick={buttonNoArrowClick} haveArrow={false}/>
-                <NavBarTopButton imageSrc={vn} text="VND" onClick={buttonHaveArrowClick} haveArrow={true}/>
-                <NavBarTopButton imageSrc={book_mark} text="Đăng nhập" onClick={buttonHaveArrowClick} haveArrow={true}/>
+                <NavBarButton imageSrc={download} text="Tải ứng dụng" haveArrow={true} componentChild={navBarTopDownload}/>
+                <NavBarButton imageSrc={shake_hand} text="Hợp tác với chúng tôi" haveArrow={false} linkRedirect="#"/>
+                <NavBarButton imageSrc={book_mark} text="Đã lưu" haveArrow={false} linkRedirect="#"/>
+                <NavBarButton imageSrc={order} text="Đặt chỗ của tôi" haveArrow={false} linkRedirect="#"/>
+                <NavBarButton imageSrc={vn} text="VN" haveArrow={true} componentChild={navBarTopChangeLanguage}/>
+                <NavBarButton imageSrc={book_mark} text="Đăng nhập" haveArrow={true} componentChild={navBarTopLogin}/>
                 <SampleButton onClick={sampleButtonClick} backgroundColor="#0194F3" backgroundColorHover="#007CE8" height="20px" textColor="white" text="Đăng ký"/>
             </div>
         </div>

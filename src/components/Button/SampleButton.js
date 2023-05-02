@@ -6,7 +6,8 @@ export default function SampleButton(props) {
 
     const buttonStyle = {
         backgroundColor: hover ? props.backgroundColorHover : props.backgroundColor,
-        height: props.height
+        height: props.height,
+        width: props.width,
     };
     
     const handleMouseOver = () => {

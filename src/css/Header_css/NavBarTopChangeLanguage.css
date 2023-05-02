@@ -1,0 +1,40 @@
+.nav_bar_top-changle-language {
+    width: 150px;
+    height: auto;
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 3%;
+    background-color: white;
+    position: absolute;
+    top: 105%;
+    left: -60%;
+}
+
+.nav_bar_top-changle-language--title {
+    display: flex;
+    align-items: center;
+    margin: 10px auto;
+}
+
+.nav_bar_top-changle-language--title-text {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.nav_bar_top-changle-language--options {
+    width: 100%;
+}
+
+.nav_bar_top-changle-language .nav_bar_top-button {
+    width: 80%;
+    margin: 0 !important;
+}
+
+.nav_bar_top-changle-language .nav_bar_top-button--container {
+    padding-right: 130px;
+    padding-left: 20px;
+    margin: 0 !important;
+    border-radius: 3%;
+}
