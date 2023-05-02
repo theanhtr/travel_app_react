@@ -1,0 +1,97 @@
+/* -enter: Component bắt đầu xuất hiện */
+.element--opacity-1--transition-enter {
+    opacity: 0;
+  }
+  
+  /* -enter-active: Component đang xuất hiện */
+  .element--opacity-1--transition-enter-active {
+    opacity: 1;
+    transition: opacity 0.2s;
+  }
+  
+  /* -enter-done: Component kết thúc hiệu ứng xuất hiện */
+  .element--opacity-1--transition-enter-done {
+    opacity: 1;
+  }
+  
+  /* -exit: Component bắt đầu biến mất */
+  .element--opacity-1--transition-exit {
+    opacity: 1;
+  }
+  
+  /* -exit-active: Component đang biến mất */
+  .element--opacity-1--transition-exit-active {
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+  
+  /* -exit-done: Component kết thúc hiệu ứng biến mất */
+  .element--opacity-1--transition-exit-done {
+    opacity: 0;
+  }
+
+/* -enter: Component bắt đầu xuất hiện */
+.element--opacity-0-8--transition-enter {
+    opacity: 0;
+  }
+  
+  /* -enter-active: Component đang xuất hiện */
+  .element--opacity-0-8--transition-enter-active {
+    opacity: 0.8;
+    transition: opacity 0.2s;
+  }
+  
+  /* -enter-done: Component kết thúc hiệu ứng xuất hiện */
+  .element--opacity-0-8--transition-enter-done {
+    opacity: 0.8;
+  }
+  
+  /* -exit: Component bắt đầu biến mất */
+  .element--opacity-0-8--transition-exit {
+    opacity: 0.8;
+  }
+  
+  /* -exit-active: Component đang biến mất */
+  .element--opacity-0-8--transition-exit-active {
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+  
+  /* -exit-done: Component kết thúc hiệu ứng biến mất */
+  .element--opacity-0-8--transition-exit-done {
+    opacity: 0;
+  }
+
+  
+/* -enter: Component bắt đầu xuất hiện */
+.element--tran-X-minus-100-left--transition-enter {
+    transform: translateX(-100%);
+  }
+  
+  /* -enter-active: Component đang xuất hiện */
+  .element--tran-X-minus-100-left--transition-enter-active {
+    transform: translateX(0);
+    transition: transform 0.2s;
+  }
+  
+  /* -enter-done: Component kết thúc hiệu ứng xuất hiện */
+  .element--tran-X-minus-100-left--transition-enter-done {
+    transform: translateX(0);
+  }
+  
+  /* -exit: Component bắt đầu biến mất */
+  .element--tran-X-minus-100-left--transition-exit {
+    transform: translateX(0);
+  }
+  
+  /* -exit-active: Component đang biến mất */
+  .element--tran-X-minus-100-left--transition-exit-active {
+    transform: translateX(-100%);
+    transition: transform 0.2s;
+  }
+  
+  /* -exit-done: Component kết thúc hiệu ứng biến mất */
+  .element--tran-X-minus-100-left--transition-exit-done {
+    transform: translateX(-100%);
+  }
+

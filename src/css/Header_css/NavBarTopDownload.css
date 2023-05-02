@@ -7,6 +7,9 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     border-radius: 3%;
     background-color: white;
+    position: absolute;
+    top: 105%;
+    left: -12%;
 }
 
 .nav_bar_top-download--title {

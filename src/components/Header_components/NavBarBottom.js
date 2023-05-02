@@ -1,18 +1,16 @@
 import React from "react";
 import '../../css/Header_css/NavBarBottom.css'
-import NavBarBottomButton from "./NavBarBottomButton";
+import NavBarButton from "./NavBarButton";
+import NavBarBottomStay from "./NavBarBottomStay";
 
 export default function NavBarBottom() {
-    function navBarBottomButtonClick() {
-        console.log("bottom click");
-    }
+    const navBarBottomStay = <NavBarBottomStay />
+
     return (
         <div className="nav_bar_bottom">
             <div className="nav_bar_bottom--content">
-                <NavBarBottomButton onClick={navBarBottomButtonClick} text="Vận chuyển"/>
-                <NavBarBottomButton onClick={navBarBottomButtonClick} text="Chỗ ở"/>
-                <NavBarBottomButton onClick={navBarBottomButtonClick} text="Hoạt động và giải trí"/>
-                <NavBarBottomButton onClick={navBarBottomButtonClick} text="Sản phẩm bổ sung"/>
+                <NavBarButton textSize="18px" text="Chỗ ở" haveArrow={true} componentChild={navBarBottomStay}/>
+                <NavBarButton textSize="18px" text="Sản phẩm bổ sung" haveArrow={true} componentChild={navBarBottomStay}/>
             </div>
         </div>
     );

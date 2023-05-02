@@ -1,9 +1,8 @@
 import React from "react";
 import "../../css/Header_css/NavBarTopDownload.css";
-import { CSSTransition } from "react-transition-group";
 import { FaArrowDown } from "react-icons/fa";
 
-export default function NavBarTopDownload(props) {
+export default function NavBarTopDownload() {
     return (
         <div className="nav_bar_top-download">
             <div className="nav_bar_top-download--title">
