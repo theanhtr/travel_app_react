@@ -2,14 +2,13 @@
     height: 300px;
     display: flex;
     border-radius: 1%;
-    overflow: hidden;
 }
 
 .booking--container > .booking--nav {
     width: 30%;
     height: 100%;
     background-color: #F2F3F3;
-    overflow: hidden;
+    overflow-y: scroll;
 }
 
 .booking--container > .booking--main {
