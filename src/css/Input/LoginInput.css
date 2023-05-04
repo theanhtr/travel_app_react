@@ -1,15 +1,15 @@
-.text-input--container {
+.login-input--container {
     position: relative;
 }
 
-.text-input--container-input {
+.login-input--container-input {
     width: 100%;
     height: 100%;
     border: 1px solid black;
-    border-radius: 4%;
+    border-radius: 6px;
 }
 
-.text-input--hidden-icon {
+.login-input--hidden-icon {
     position: absolute;
     top: 25%;
     right: 0;

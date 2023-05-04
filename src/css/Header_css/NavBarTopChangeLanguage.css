@@ -5,7 +5,7 @@
     align-items: start;
     flex-direction: column;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    border-radius: 3%;
+    border-radius: 6px;
     background-color: white;
     position: absolute;
     top: 105%;
@@ -36,5 +36,5 @@
     padding-right: 130px;
     padding-left: 20px;
     margin: 0 !important;
-    border-radius: 3%;
+    border-radius: 6px;
 }

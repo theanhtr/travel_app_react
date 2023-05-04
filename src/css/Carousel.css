@@ -12,7 +12,7 @@
 }
 
 .carousel-item > img {
-    border-radius: 2%;
+    border-radius: 6px;
 }
 
 .react-multiple-carousel__arrow {
