@@ -1,11 +1,11 @@
 import React from "react";
-import "../../css/Input/TextInput.css";
+import "../../css/Input/LoginInput.css";
 import { FaEyeSlash, FaEye } from "react-icons/fa"
 
-export default function TextInput(props) {
+export default function LoginInput(props) {
     const [hidden, setHidden] = React.useState(true);
 
-    const styleDivTextInput = {
+    const styleDivLoginInput = {
         width: props.width,
         height: props.height,
         fontSize: props.fontSize,
@@ -22,11 +22,11 @@ export default function TextInput(props) {
     return (
         <>
             <label htmlFor={props.name} style={{fontWeight: 600, marginBottom: "8px", marginTop: "15px"}}>{props.label}</label>
-            <div className="text-input--container" style={styleDivTextInput}>
-                <input onChange={onChangeInput} type={!props.haveSetHidden ? "text" : (hidden ? "password" : "text")} className="text-input--container-input" id={props.name} name={props.name}/>
+            <div className="login-input--container" style={styleDivLoginInput}>
+                <input onChange={onChangeInput} type={!props.haveSetHidden ? props.inputType : (hidden ? "password" : props.inputType)} className="login-input--container-input" id={props.name} name={props.name}/>
 
                 {props.haveSetHidden && 
-                    <div className="text-input--hidden-icon" onClick={setTextHidden}>
+                    <div className="login-input--hidden-icon" onClick={setTextHidden}>
                         {hidden ? <FaEye size={props.fontSize}/> : <FaEyeSlash size={props.fontSize}/>}
                     </div>
                 }

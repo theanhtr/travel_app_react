@@ -1,15 +1,15 @@
 .booking--container {
     height: 300px;
     display: flex;
-    border-radius: 1%;
-    overflow: hidden;
+    border-radius: 6px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .booking--container > .booking--nav {
     width: 30%;
     height: 100%;
     background-color: #F2F3F3;
-    overflow: hidden;
+    overflow-y: scroll;
 }
 
 .booking--container > .booking--main {
@@ -17,9 +17,8 @@
     height: 100%;
     display: flex;
     flex-direction: column;
-    background-color: rgb(238, 216, 216);
-    overflow: hidden;
-    
+    background-color: #FFFFFF;
+    overflow: visible;
 }
 
 .booking--nav > .booking_nav-button {

@@ -21,5 +21,5 @@
 .nav_bar_bottom--content > .nav_bar_top-button > .nav_bar_top-button--container {
     padding: 0;
     margin: 0 !important;
-    border-radius: 3%;
+    border-radius: 6px;
 }

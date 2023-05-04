@@ -1,6 +1,6 @@
 import React from "react";
 import "../../css/Header_css/NavBarTopLogin.css";
-import TextInput from "../Input/TextInput";
+import LoginInput from "../Input/LoginInput";
 import SampleButton from "../Button/SampleButton";
 
 export default function NavBarTopLogin() {
@@ -30,8 +30,8 @@ export default function NavBarTopLogin() {
                 <p className="nav_bar_top-login--title-text" style={{fontSize: "18px", fontWeight: "650"}}> Đăng nhập tài khoản </p>
             </div>
 
-            <TextInput label="Email" height="35px" width="100%" name="email" fontSize="18px" haveSetHidden={false} onChange={setEmailInput}/>
-            <TextInput label="Password" height="35px" width="100%" name="password" fontSize="18px" haveSetHidden={true} onChange={setPasswordInput}/>
+            <LoginInput inputType="text" label="Email" height="35px" width="100%" name="email" fontSize="18px" haveSetHidden={false} onChange={setEmailInput}/>
+            <LoginInput inputType="text" label="Password" height="35px" width="100%" name="password" fontSize="18px" haveSetHidden={true} onChange={setPasswordInput}/>
 
             <div style={{height: "30px"}}></div>
             <SampleButton onClick={loginWithPassword} backgroundColor="#0194F3" backgroundColorHover="#007CE8" width="100%" height="35px" textColor="white" text="Đăng Nhập"/>
