@@ -9,6 +9,7 @@ export default function SuggestionInput(props) {
         width: "100%",
         height: props.height,
         border: focus ? "2px solid blue" : "1px solid black",
+        cursor: "pointer"
     }
 
     function onChangeInput(event) {
@@ -18,7 +19,7 @@ export default function SuggestionInput(props) {
     return (
         <div className="suggestion-input" style={{width: props.width}}>
             <label htmlFor={props.name} style={{fontSize: props.fontSize, fontWeight: 600, marginBottom: "8px", marginTop: "15px"}}>{props.label}</label>
-            <div className="suggestion-input--container" style={styleDivSuggestionInput} onFocus={() => {setFocus(true)}} onBlur={() => {setFocus(false)}}>
+            <div className="suggestion-input--container" style={styleDivSuggestionInput} onClick={() => inputRef.current.focus()} onFocus={() => {setFocus(true)}} onBlur={() => {setFocus(false)}}>
                 {props.haveIcon && 
                     <div style={{fontSize: props.fontSize}} className="suggestion-input--icon" onClick={() => inputRef.current.focus()}>
                         {props.icon}
