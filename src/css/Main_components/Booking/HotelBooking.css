@@ -1,0 +1,10 @@
+.hotel-booking--time-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hotel-booking--time-container > .check-out-date--container {
+    display: flex;
+    flex-direction: column;
+}

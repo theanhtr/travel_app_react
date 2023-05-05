@@ -25,9 +25,15 @@
 
 .calendar-input--icon {
     position: absolute;
-    top: 25%;
-    left: 5px;
     cursor: pointer;
+    height: 100%;
+    width: 15%;
+}
+
+.calendar-input--icon > svg {
+    position: absolute;
+    left: 20%;
+    top: 30%;
 }
 
 .calendar-input--container-input--wrapper {
@@ -38,4 +44,16 @@
     left: 30px;
     display: flex !important;
     align-items: center;
+}
+
+.calendar-input--data-str {
+    position: absolute;
+    width: 85%;
+    height: 100%;
+    left: 15%;
+}
+
+.calendar-input--data-str > span {
+    position: absolute;
+    top: 25%;
 }
