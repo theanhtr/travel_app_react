@@ -1,0 +1,65 @@
+.selection-input {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    margin: 5px 10px;
+}
+
+.selection-input--container {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 8px;
+}
+
+.selection-input--container-input {
+    width: 87%;
+    height: 90%;
+    border: 0px;
+}
+
+.selection-input--container-input:focus {
+    outline: none;
+}
+
+.selection-input--icon {
+    position: absolute;
+    cursor: pointer;
+    height: 100%;
+    width: 15%;
+}
+
+.selection-input--icon > svg {
+    position: absolute;
+    left: 20%;
+    top: 30%;
+}
+
+.selection-input--selected-value {
+    position: absolute;
+    cursor: pointer;
+    height: 100%;
+    width: 70%;
+    left: 15%;
+}
+
+.selection-input--selected-value > span {
+    position: absolute;
+    left: 15%;
+    top: 20%;
+}
+
+.selection-input--icon-arrow {
+    position: absolute;
+    cursor: pointer;
+    height: 100%;
+    width: 15%;
+    right: 0;
+}
+
+.selection-input--icon-arrow > svg {
+    position: absolute;
+    right: 15%;
+    top: 30%;
+}
