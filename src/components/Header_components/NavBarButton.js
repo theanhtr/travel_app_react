@@ -36,8 +36,8 @@ export default function NavBarButton(props) {
 
     return (
         <div ref={componentChildShow === true ? ref : null} className="nav_bar_top-button">
-            <div className="nav_bar_top-button--container" onClick={props.haveArrow ? showComponentChild : redirectToLink}>
-              <img src={props.imageSrc} className="nav_bar_top-button--image"/>
+            <div className="nav_bar_top-button--container" onClick={props.onClick ? props.onClick : (props.haveArrow ? showComponentChild : redirectToLink)}>
+              <img src={props.imageSrc} height={18} className="nav_bar_top-button--image"/>
               <p className="nav_bar_top-button--text" style={{fontSize: props.textSize ?? "14px", margin: "0px 3px"}}> {props.text} </p>
               {props.haveArrow && <FaAngleDown size={16}/>}
             </div>
