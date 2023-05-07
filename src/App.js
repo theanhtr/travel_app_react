@@ -1,13 +1,24 @@
 import './App.css';
-import Header from "./components/Header_components/Header"
+import RootLayout from './layout/RootLayout';
 import MainPage from './pages/MainPage';
+import {  createBrowserRouter, Routes, Route, NavLink, createRoutesFromElements, RouterProvider } from 'react-router-dom';
+import NotFound from './pages/NotFound';
 
-//need create route
+const router = createBrowserRouter(
+  createRoutesFromElements(
+        <Route path='/' element={<RootLayout />}>
+          <Route index element={<MainPage />}/>
+          <Route path='about' element={<div style={{marginTop: "200px"}}>about</div>}/>
+
+          <Route path='*' element={<NotFound />}/>
+        </Route>
+  )
+)
+
 function App() {
   return (
     <div className="App">
-      <Header />
-      <MainPage />
+      <RouterProvider router={router} />
     </div>
   );
 }

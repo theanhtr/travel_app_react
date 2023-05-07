@@ -1,0 +1,44 @@
+.plus-input--container {
+    background-color: white;
+    padding: 12px 20px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 8px;
+    justify-content: space-around;
+}
+
+.plus-input--label-container {
+    flex: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.plus-input--icon {
+    margin-right: 10px;
+}
+
+.plus-input--data-update {
+    flex: 8;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.plus-input--operator {
+    background-color: #F2F3F3;
+    border-radius: 3px;
+    padding: 4px 5px 3px;
+}
+
+.plus-input--current-value {
+    border: 1px solid black;
+    padding: 4px 0px 3px;
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    border-radius: 4px;
+    margin: 0px 5px;
+}
