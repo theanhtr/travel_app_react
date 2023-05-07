@@ -5,8 +5,6 @@ import "../../css/Trantision.css"
 import {FaAngleDown} from "react-icons/fa"
 import SelectionInputChild from "./Child_components/SelectionInputChild";
 
-import "react-datepicker/dist/react-datepicker.css";
-
 export default function SelectionInput(props) {
     const [componentOptionsShow, setComponentOptionsShow] = React.useState(false);
     const ref = React.useRef(null);
@@ -24,11 +22,11 @@ export default function SelectionInput(props) {
         return () => {
             document.removeEventListener("mousedown", handleClickOutside);
         };
-        });
+    });
 
     function showComponentOptions() {
         setComponentOptionsShow(componentOptionsShow ? false : true);
-        setFocus(true);
+        setFocus(focus ? false : true);
     }
     
     const [focus, setFocus] = React.useState(false);
@@ -39,6 +37,12 @@ export default function SelectionInput(props) {
         height: props.height,
         border: focus ? "2px solid blue" : "1px solid black",
         cursor: "pointer"
+    }
+
+    function changeSelected(newSelectedValue) {
+        setComponentOptionsShow(false);
+        setFocus(false);
+        props.onChange(newSelectedValue);
     }
     
     //options: title, value is required; sub_title is not required
@@ -61,20 +65,20 @@ export default function SelectionInput(props) {
                 </div>
             </div>
 
-                <CSSTransition
-                    in={componentOptionsShow}
-                    timeout={300}
-                    classNames="element--opacity-1--transition"
-                    unmountOnExit
-                >
-                    {
-                        <div className="selection-input--options-container">
-                            {props.arrayOptions.map((option) => 
-                                <SelectionInputChild isSelected={option.value === props.selectedValue} key={option.value} value={option.value} backgroundColorHover="#F2F3F3" backgroundColor="white" fontSizeTitle="16px" title={option.title} subTitle={option.sub_title ? option.sub_title : ""} fontSizeSubTitle="14px"/>
-                            )}
-                        </div>
-                    }
-              </CSSTransition>
+            <CSSTransition
+                in={componentOptionsShow}
+                timeout={300}
+                classNames="element--opacity-1--transition"
+                unmountOnExit
+            >
+                {
+                    <div className="selection-input--options-container">
+                        {props.arrayOptions.map((option) => 
+                            <SelectionInputChild onClick={changeSelected} isSelected={option.value === props.selectedValue} key={option.value} value={option.value} backgroundColorHover="#F2F3F3" backgroundColor="white" fontSizeTitle="16px" title={option.title} subTitle={option.sub_title ? option.sub_title : ""} fontSizeSubTitle="14px"/>
+                        )}
+                    </div>
+                }
+            </CSSTransition>
         </div>
     );  
 }

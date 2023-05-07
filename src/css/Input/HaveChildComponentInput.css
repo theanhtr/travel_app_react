@@ -1,0 +1,68 @@
+.have-child-input {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    height: auto;
+    margin: 5px 10px;
+}
+
+.have-child-input--container {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 8px;
+}
+
+.have-child-input--icon {
+    position: absolute;
+    cursor: pointer;
+    height: 100%;
+    width: 9%;
+}
+
+.have-child-input--icon > svg {
+    position: absolute;
+    left: 20%;
+    top: 30%;
+}
+
+.have-child-input--current-data {
+    position: absolute;
+    cursor: pointer;
+    height: 100%;
+    left: 9%;
+    width: 81%;
+}
+
+.have-child-input--current-data > span {
+    position: absolute;
+    top: 20%;
+}
+
+.have-child-input--icon-arrow {
+    position: absolute;
+    cursor: pointer;
+    height: 100%;
+    width: 10%;
+    right: 0;
+}
+
+.have-child-input--icon-arrow > svg {
+    position: absolute;
+    right: 15%;
+    top: 30%;
+}
+
+.have-child-input--child-container {
+    width: 100%;
+    min-height: 100px;
+    max-height: 250px;
+    overflow-y: visible;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 6px;
+    position: absolute;
+    top: 110%;
+    z-index: 10;
+}

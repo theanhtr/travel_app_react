@@ -1,5 +1,5 @@
 import React from "react";
-import "../../css/Input/Child_components/SelectionInputChild.css";
+import "../../../css/Input/Child_components/SelectionInputChild.css";
 import {GoPrimitiveDot} from "react-icons/go"
 
 export default function SelectionInputChild(props) {
@@ -19,8 +19,8 @@ export default function SelectionInputChild(props) {
       setHover(false);
     };
 
-    function onClick(event) {
-        console.log(event);
+    function onClick() {
+      props.onClick(props.value);
     }
 
     return (

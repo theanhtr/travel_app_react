@@ -2,9 +2,15 @@ import React from "react";
 import "../../../css/Main_components/Booking/HotelBooking.css"
 import SuggestionInput from "../../Input/SuggestionInput";
 import {FaSearchLocation, FaRegCalendarAlt, FaMoon} from "react-icons/fa"
+import {BsFillHouseAddFill} from "react-icons/bs"
 import CalendarInput from "../../Input/CalendarInput";
 import OnlyNumberInput from "../../Input/OnlyNumberInput";
 import SelectionInput from "../../Input/SelectionInput";
+import PlusInput from "../../Input/PlusInput";
+import HaveChildComponentInput from "../../Input/HaveChildComponentInput";
+import GuestRoomChangeContainer from "./HotelBooking_components/GuestRoomChangeContainer";
+import Warning from "../../Notification/Warning";
+import SampleButton from "../../Button/SampleButton";
 
 export default function HotelBooking() {
     //location
@@ -75,25 +81,41 @@ export default function HotelBooking() {
     }, [bookingTime]);
 
     function changeNightsNumber(newNightsNumber) {
-        // setBookingTime({
-        //     ...bookingTime,
-        //     "check_in_date": newDate,
-        //     "check_out_date": newCheckOutDate.toJSON(),
-        // });
+        let newDateTemp = new Date(bookingTime.check_in_date);
+        let newCheckOutDate = new Date(newDateTemp.setDate(newDateTemp.getDate() + newNightsNumber));
 
-        console.log(newNightsNumber);
+        setBookingTime({
+            ...bookingTime,
+            "nights_number": newNightsNumber,
+            "check_out_date": newCheckOutDate.toJSON(),
+        });
     }
 
     //bookingDetail
     const [bookingDetail, setBookingDetail] = React.useState({
-        "guest_number": 2,
+        "guest_number": 1,
         "rooms_number": 1,
     });
 
-    //test only number input
-    const [onlyNumberValue, setOnlyNumberValue] = React.useState(null);
-    function changeOnlyNumberValue(onlyNumberValue) {
-        setOnlyNumberValue(onlyNumberValue);
+    function onChangeGuestNumber(newValue) {
+        setBookingDetail({
+            ...bookingDetail,
+            guest_number: newValue
+        })
+    }
+
+    function onChangeRoomsNumber(newValue) {
+        setBookingDetail({
+            ...bookingDetail,
+            rooms_number: newValue
+        })
+    }
+
+    //find hotel
+    function findHotel() {
+        console.log(searchLocation);
+        console.log(bookingTime);
+        console.log(bookingDetail);
     }
 
     return (
@@ -103,11 +125,11 @@ export default function HotelBooking() {
             </div>
 
             <div className="hotel-booking--time-container" style={{width: "90%", display: "flex", justifyContent: "space-between"}}>
-                <CalendarInput selectedDate={new Date(bookingTime.check_in_date)} width="40%" height="40px" fontSize="16px" onChange={changeCheckInDate} name="start-date-input" label="Ngày nhận phòng: " haveIcon={true} icon={<FaRegCalendarAlt size="16px"/>} />
+                <CalendarInput selectedDate={new Date(bookingTime.check_in_date)} width="45%" height="40px" fontSize="16px" onChange={changeCheckInDate} name="start-date-input" label="Ngày nhận phòng: " haveIcon={true} icon={<FaRegCalendarAlt size="16px"/>} />
                 
                 <SelectionInput selectedValue={bookingTime.nights_number} arrayOptions={arrayNightsNumberOptions} width="30%" height="40px" fontSize="16px" onChange={changeNightsNumber} name="nights-number-input" label="Số đêm: " haveIcon={true} icon={<FaMoon size="16px"/>} />
 
-                <div className="check-out-date--container">
+                <div className="check-out-date--container" style={{width: "30%", marginLeft: "5px"}}>
                     <label style={{fontSize: "16px", fontWeight: 600, marginBottom: "16px"}}>Ngày trả phòng:</label>
 
                     <div style={{fontSize: "15px"}}>
@@ -117,7 +139,8 @@ export default function HotelBooking() {
             </div>
             
             <div className="hotel-booking--detail-container">
-                <OnlyNumberInput width="90%" height="40px" fontSize="16px" valueCurrent={onlyNumberValue} onChange={changeOnlyNumberValue} name="only-number-input" label="Test only number: " haveIcon={true} icon={<FaSearchLocation size="16px"/>} />
+                <HaveChildComponentInput childComponent={<GuestRoomChangeContainer changeGuestNumber={onChangeGuestNumber} changeRoomsNumber={onChangeRoomsNumber} guestNumber={bookingDetail.guest_number} roomsNumber={bookingDetail.rooms_number} />} currentData={bookingDetail.guest_number + " người, " + bookingDetail.rooms_number + " phòng"} width="63%" height="40px" fontSize="16px" label="Khách và phòng: " haveIcon={true} icon={<BsFillHouseAddFill size="16px"/>}/> 
+                <SampleButton margin="5px" onClick={findHotel} backgroundColor="#FF5E1F" backgroundColorHover="#DF440F" width="23%" height="23px" textColor="white" text="Tìm phòng"/>
             </div>
         </div>
     );
