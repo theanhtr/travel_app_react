@@ -74,6 +74,7 @@ export default function NavBarTop() {
         
             <div className="nav_bar_top--right">
                 <NavBarButton imageSrc={download} text="Tải ứng dụng" haveArrow={true} componentChild={navBarTopDownload}/>
+                <NavBarButton imageSrc={book_mark} text="Thông tin thêm" haveArrow={false} linkRedirect="about"/>
                 <NavBarButton imageSrc={shake_hand} text="Hợp tác với chúng tôi" haveArrow={false} linkRedirect="#"/>
                 <NavBarButton imageSrc={book_mark} text="Đã lưu" haveArrow={false} linkRedirect="#"/>
                 <NavBarButton imageSrc={order} text="Đặt chỗ của tôi" haveArrow={false} linkRedirect="#"/>

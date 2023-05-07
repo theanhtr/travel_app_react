@@ -3,8 +3,12 @@ import "../../css/Header_css/NavBarButton.css"
 import "../../css/Trantision.css"
 import {FaAngleDown} from 'react-icons/fa';
 import { CSSTransition } from "react-transition-group";
+import { useNavigate } from "react-router-dom";
 
 export default function NavBarButton(props) {
+    //for router
+    let navigate = useNavigate();
+
     const [componentChildShow, setComponentChildShow] = React.useState(false);
     const ref = React.useRef(null);
 
@@ -27,7 +31,7 @@ export default function NavBarButton(props) {
     }
 
     function redirectToLink() {
-        console.log(props.linkRedirect);
+        navigate(props.linkRedirect);
     }
 
     return (
