@@ -1,6 +1,6 @@
 #main_page {
-    height: 100%;
     width: 100%;
+    height: 1700px;
 }
 
 .main_page--background-search {
@@ -24,4 +24,11 @@
     width: 70%;
     position: absolute;
     top: 430px;
+}
+
+#main_page > .popular-destinations--container {
+    width: 70%;
+    position: absolute;
+    top: 800px;
+    left: 15%;
 }
