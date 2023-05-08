@@ -11,6 +11,46 @@ export default function NavBarTopLogin(props) {
     const [password, setPassword] = React.useState("");
     const [error, setError] = React.useState(false);
     const [loading, setLoading] = React.useState(false);
+    const [currentFocus, setCurrentFocus] = React.useState(-1);
+    const arrayButtonFocus = ["email", "password", "login-button", "register-button", "forgot-password-button", "facebook-button", "google-button"];
+    
+
+    //lắng nghe sự kiện enter
+    function handlePressKey(event) {
+        let key = event.key;
+
+        if(key === 'Tab') {
+            event.preventDefault();
+
+            let nextFocus = currentFocus + 1;
+
+            if (nextFocus >= arrayButtonFocus.length) {
+                nextFocus = 0;
+            }
+
+            document.getElementById(arrayButtonFocus[nextFocus]).focus();
+
+            setCurrentFocus(nextFocus);
+        } else if (key === 'Enter') {
+            if(currentFocus >= 0 && currentFocus < arrayButtonFocus.length) {
+                event.preventDefault();
+
+                document.getElementById(arrayButtonFocus[currentFocus]).click();
+            }
+        }
+    }
+
+    function changeCurrentFocus(newFocus) {
+        setCurrentFocus(newFocus);
+    }
+
+    React.useEffect(() => {
+        document.addEventListener("keydown", handlePressKey);
+        
+        return () => {
+            document.removeEventListener("keydown", handlePressKey);
+        };
+    });
 
     const schema = yup.object().shape({
         email: yup.string().email().required(),
@@ -54,7 +94,7 @@ export default function NavBarTopLogin(props) {
                         }, 2000);
                     });
               } catch (err) {
-                console.log("Login error: " + err);
+                setLoading(false);
 
                 setError(true);
                 setTimeout(() => {
@@ -80,18 +120,18 @@ export default function NavBarTopLogin(props) {
                 <p className="nav_bar_top-login--title-text" style={{fontSize: "18px", fontWeight: "650"}}> Đăng nhập tài khoản </p>
             </div>
 
-            <LoginInput inputType="text" label="Email" height="35px" width="100%" name="email" fontSize="18px" haveSetHidden={false} onChange={setEmailInput}/>
-            <LoginInput inputType="text" label="Password" height="35px" width="100%" name="password" fontSize="18px" haveSetHidden={true} onChange={setPasswordInput}/>
+            <LoginInput focusNumber={0} onChangeCurrentFocus={changeCurrentFocus} inputType="text" label="Email" height="35px" width="100%" name="email" fontSize="18px" haveSetHidden={false} onChange={setEmailInput}/>
+            <LoginInput focusNumber={1} onChangeCurrentFocus={changeCurrentFocus} inputType="text" label="Password" height="35px" width="100%" name="password" fontSize="18px" haveSetHidden={true} onChange={setPasswordInput}/>
 
             <div style={{marginTop: "10px", paddingLeft: "10px", color:"red", height: "30px"}}>
                 {error && "Thông tin đăng nhập chưa chính xác"}
             </div>
-            <SampleButton onClick={loginWithPassword} backgroundColor="#0194F3" backgroundColorHover="#007CE8" width="100%" height="35px" textColor="white" text="Đăng Nhập"/>
+            <SampleButton name="login-button" onClick={loginWithPassword} backgroundColor="#0194F3" backgroundColorHover="#007CE8" width="100%" height="35px" textColor="white" text={"Đăng Nhập"}/>
 
             <div className="nav_bar_top-login--support">
-                <SampleButton onClick={login} backgroundColor="#0194F3" backgroundColorHover="#007CE8" width="45%" height="35px" textColor="white" text="Đăng Ký"/>
+                <SampleButton name="register-button" onClick={login} backgroundColor="#0194F3" backgroundColorHover="#007CE8" width="45%" height="35px" textColor="white" text="Đăng Ký"/>
                 <div style={{width:"5%"}}></div>
-                <SampleButton onClick={login} backgroundColor="#0194F3" backgroundColorHover="#007CE8" width="45%" height="35px" textColor="white" text="Quên mật khẩu"/>
+                <SampleButton name="forgot-password-button" onClick={login} backgroundColor="#0194F3" backgroundColorHover="#007CE8" width="45%" height="35px" textColor="white" text="Quên mật khẩu"/>
             </div>
 
             <div style={{height: "15px"}}></div>
@@ -99,9 +139,9 @@ export default function NavBarTopLogin(props) {
             <div className="nav_bar_top-login--social">
                 <div>Hoặc đăng nhập bằng: </div>
                 <div className="nav_bar_top-login--support">
-                    <SampleButton onClick={login} backgroundColor="#0194F3" backgroundColorHover="#007CE8" width="45%" height="35px" textColor="white" text="Facebook"/>
+                    <SampleButton name="facebook-button" onClick={login} backgroundColor="#0194F3" backgroundColorHover="#007CE8" width="45%" height="35px" textColor="white" text="Facebook"/>
                     <div style={{width:"5%"}}></div>
-                    <SampleButton onClick={login} backgroundColor="#0194F3" backgroundColorHover="#007CE8" width="45%" height="35px" textColor="white" text="Google"/>
+                    <SampleButton name="google-button" onClick={login} backgroundColor="#0194F3" backgroundColorHover="#007CE8" width="45%" height="35px" textColor="white" text="Google"/>
                 </div>
             </div>
         </div>

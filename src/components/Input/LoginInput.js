@@ -19,10 +19,14 @@ export default function LoginInput(props) {
         props.onChange(event.target.value);
     }
 
+    function handleOnChangeCurrentFocus() {
+        props.onChangeCurrentFocus(props.focusNumber);
+    }
+
     return (
         <>
             <label htmlFor={props.name} style={{fontWeight: 600, marginBottom: "8px", marginTop: "15px"}}>{props.label}</label>
-            <div className="login-input--container" style={styleDivLoginInput}>
+            <div onClick={handleOnChangeCurrentFocus} className="login-input--container" style={styleDivLoginInput}>
                 <input onChange={onChangeInput} type={!props.haveSetHidden ? props.inputType : (hidden ? "password" : props.inputType)} className="login-input--container-input" id={props.name} name={props.name}/>
 
                 {props.haveSetHidden && 
