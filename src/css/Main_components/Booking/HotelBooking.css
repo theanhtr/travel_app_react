@@ -12,4 +12,5 @@
 .hotel-booking--detail-container {
     display: flex;
     align-items: end;
+    margin-bottom: 15px;
 }

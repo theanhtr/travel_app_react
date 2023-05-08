@@ -16,9 +16,12 @@ import NavBarTopDownload from './NavBarTopDownload';
 import NavBarTopChangeLanguage from "./NavBarTopChangeLanguage";
 import NavBarTopLogin from "./NavBarTopLogin";
 import NavBarTopInformation from "./NavBarTopInformation";
+import { useNavigate } from "react-router-dom";
 
 export default function NavBarTop() {
     const [barMenuShow, setBarMenuShow] = React.useState(false);
+    let navigate = useNavigate();
+
     let isLoginLocalStorage = 'false';
 
     try {
@@ -60,6 +63,10 @@ export default function NavBarTop() {
         }
     }
 
+    function redirectToHome() {
+        navigate("/");
+    }
+
     return (
         <div className="nav_bar_top">
             <div className="nav_bar_top--left">
@@ -93,7 +100,7 @@ export default function NavBarTop() {
                     
                 </CSSTransition>
                     
-                <img src={logo_travel} alt="not found" width={135}/>
+                <img onClick={redirectToHome} style={{cursor: "pointer"}} src={logo_travel} alt="not found" width={135}/>
             </div>
         
             <div className="nav_bar_top--right">
@@ -103,7 +110,7 @@ export default function NavBarTop() {
                 <NavBarButton imageSrc={book_mark} text="Đã lưu" haveArrow={false} linkRedirect="#"/>
                 <NavBarButton imageSrc={order} text="Đặt chỗ của tôi" haveArrow={false} linkRedirect="#"/>
                 <NavBarButton imageSrc={vn} text="VN" haveArrow={true} componentChild={navBarTopChangeLanguage}/>
-                <NavBarButton imageSrc={human} text={isLogin === 'true' ? "Hellu" : "Đăng nhập"} haveArrow={true} componentChild={renderUserChildComponent}/>
+                <NavBarButton imageSrc={human} text={isLogin === 'true' ? "Tài khoản" : "Đăng nhập"} haveArrow={true} componentChild={renderUserChildComponent}/>
                 <SampleButton name="register-button" onClick={sampleButtonClick} backgroundColor="#0194F3" backgroundColorHover="#007CE8" height="20px" textColor="white" text="Đăng ký"/>
             </div>
         </div>

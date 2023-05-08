@@ -35,13 +35,13 @@ export default function MyCarousel(props) {
         renderArrowsWhenDisabled={false}
         swipeable={false}
         draggable={false}
-        slidesToSlide={1}
+        slidesToSlide={0.5}
         showDots={false}
         responsive={responsive}
         ssr={true} // means to render carousel on server-side.
         infinite={true}
         keyBoardControl={true}
-        transitionDuration={500}
+        transitionDuration={300}
         containerClass="carousel-container"
         itemClass={itemClassVar}
         sliderClass="carousel-slider"

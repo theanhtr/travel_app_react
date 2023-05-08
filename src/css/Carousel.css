@@ -19,6 +19,7 @@
     position: absolute;
     top: 50%;
     border-radius: 50%;
+    width: 5%;
 }
 
 .react-multiple-carousel__arrow--left {
