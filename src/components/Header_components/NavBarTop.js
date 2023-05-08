@@ -103,8 +103,8 @@ export default function NavBarTop() {
                 <NavBarButton imageSrc={book_mark} text="Đã lưu" haveArrow={false} linkRedirect="#"/>
                 <NavBarButton imageSrc={order} text="Đặt chỗ của tôi" haveArrow={false} linkRedirect="#"/>
                 <NavBarButton imageSrc={vn} text="VN" haveArrow={true} componentChild={navBarTopChangeLanguage}/>
-                <NavBarButton imageSrc={human} text="Đăng nhập" haveArrow={true} componentChild={renderUserChildComponent}/>
-                <SampleButton onClick={sampleButtonClick} backgroundColor="#0194F3" backgroundColorHover="#007CE8" height="20px" textColor="white" text="Đăng ký"/>
+                <NavBarButton imageSrc={human} text={isLogin === 'true' ? "Hellu" : "Đăng nhập"} haveArrow={true} componentChild={renderUserChildComponent}/>
+                <SampleButton name="register-button" onClick={sampleButtonClick} backgroundColor="#0194F3" backgroundColorHover="#007CE8" height="20px" textColor="white" text="Đăng ký"/>
             </div>
         </div>
     );

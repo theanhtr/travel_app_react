@@ -140,7 +140,7 @@ export default function HotelBooking() {
             
             <div className="hotel-booking--detail-container">
                 <HaveChildComponentInput childComponent={<GuestRoomChangeContainer changeGuestNumber={onChangeGuestNumber} changeRoomsNumber={onChangeRoomsNumber} guestNumber={bookingDetail.guest_number} roomsNumber={bookingDetail.rooms_number} />} currentData={bookingDetail.guest_number + " người, " + bookingDetail.rooms_number + " phòng"} width="63%" height="40px" fontSize="16px" label="Khách và phòng: " haveIcon={true} icon={<BsFillHouseAddFill size="16px"/>}/> 
-                <SampleButton margin="5px" onClick={findHotel} backgroundColor="#FF5E1F" backgroundColorHover="#DF440F" width="23%" height="23px" textColor="white" text="Tìm phòng"/>
+                <SampleButton name="search-room-button" margin="5px" onClick={findHotel} backgroundColor="#FF5E1F" backgroundColorHover="#DF440F" width="23%" height="23px" textColor="white" text="Tìm phòng"/>
             </div>
         </div>
     );
