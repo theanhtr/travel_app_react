@@ -66,6 +66,27 @@ export default function NavBarTopLogin(props) {
     }
 
     function loginWithPassword() { 
+        const fetchUserInformation = async () => {
+            try {
+                api.get('/my-information',
+                {
+                    headers: {
+                        'Authorization': `Bearer ${localStorage.getItem('token')}`
+                      }
+                })
+                    .then(response => {
+                        localStorage.setItem('user_first_name', response.data.data.first_name);
+                        localStorage.setItem('user_last_name', response.data.data.last_name);
+                        localStorage.setItem('user_avatar_path', response.data.data.avatar);
+                    })
+                    .catch(error => {
+                        console.log('get information error: ' + error.response.data.message);
+                    });
+              } catch (err) {
+
+              }
+        }
+
         const fetchData = async () => {
             try {
                 setLoading(true);
@@ -82,8 +103,10 @@ export default function NavBarTopLogin(props) {
                         localStorage.setItem('email', response.data.data.email);
 
                         setLoading(false);
-    
+
                         props.onLogin();
+
+                        fetchUserInformation();
                     })
                     .catch(error => {
                         console.log('login error: ' + error.response.data.message);

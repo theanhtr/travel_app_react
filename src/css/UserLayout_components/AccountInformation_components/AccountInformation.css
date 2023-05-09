@@ -1,0 +1,45 @@
+.account-information--container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.account-information--label {
+    font-size: 26px;
+    font-weight: 650;
+    margin-bottom: 25px;
+}
+
+.account-information--nav {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+
+.account-information--nav::before {
+    content: "";
+    height: 1px;
+    width: 100%;
+    background-color: black;
+    position: absolute;
+    top: 32px;
+}
+
+.account-information--nav-title {
+    margin-left: 20px;
+    position: relative;
+}
+
+.account-information--nav-title-active {
+    color: blue;
+}
+
+.account-information--nav-title-active::before {
+    content: "";
+    height: 3px;
+    width: 100%;
+    background-color: blue;
+    position: absolute;
+    top: 31px;
+}
