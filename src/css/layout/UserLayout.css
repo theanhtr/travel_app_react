@@ -1,0 +1,35 @@
+.user-layout {
+    width: 65%;
+    margin: 0px auto;
+    margin-top: 150px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.user-layout > .user-layout--nav {
+    width: 30%;
+    height: 300px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    background-color: white;
+    border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+}
+
+.user-layout--nav .button-all {
+    margin: 0 !important;
+}
+
+.user-layout--nav .button-all--container {
+    width: 50%;
+    padding: 0px 120px 0px 30px;
+}
+
+.user-layout--nav .button-all--image {
+    margin-right: 5px;
+}
+
+.user-layout > .user-layout--content {
+    width: 65%;
+}
+

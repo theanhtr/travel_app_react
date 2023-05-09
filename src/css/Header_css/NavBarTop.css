@@ -48,6 +48,13 @@
     margin-left: 16px;
 }
 
+.bar_icon--menu-main > .nav_bar_top-button > .nav_bar_top-button--container {
+    width: 100%;
+    padding: 0px 100px 0px 20px;
+    margin: 0 !important;
+    border-radius: 0;
+}
+
 .bar_icon--menu-overlay {
     z-index: 9998;
     position: fixed;
@@ -56,10 +63,4 @@
     width: 100vw;
     height: 100vh;
     background-color: #80878B;
-}
-
-.bar_icon--menu-main > .nav_bar_top-button > .nav_bar_top-button--container {
-    padding: 0px 249px 0px 20px;
-    margin: 0 !important;
-    border-radius: 0;
 }

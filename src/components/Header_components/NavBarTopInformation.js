@@ -28,6 +28,10 @@ export default function NavBarTopInformation(props) {
                         localStorage.removeItem('email');
                         localStorage.setItem('isLogin', false);
 
+                        localStorage.removeItem('user_first_name');
+                        localStorage.removeItem('user_last_name');
+                        localStorage.removeItem('user_avatar_path');
+
                         setLoading(false);
                         
                         props.onLogout();
